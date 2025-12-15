@@ -3,52 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ord-Byen: Synonym & Antonym Spill</title>
+    <title>Ord-Mesteren</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="game-container">
         
-        <!-- Header med statistikk -->
-        <header>
-            <h1>🏰 Ord-Byen 🏰</h1>
-            <div class="stats-bar">
-                <span id="gold-display">💰 Gull: 0</span>
-                <span id="streak-display">🔥 Streak: 0</span>
+        <!-- START MENY (Vises først) -->
+        <div id="start-screen">
+            <h1>🎓 Ord-Mesteren 🎓</h1>
+            <p>Velg hva du vil øve på for å starte:</p>
+            <div class="menu-buttons">
+                <button onclick="startGame('synonym')" class="menu-btn syn-btn">Likhet (Synonymer)</button>
+                <button onclick="startGame('antonym')" class="menu-btn ant-btn">Motsetninger (Antonymer)</button>
             </div>
-            <button onclick="resetGame()" class="reset-btn">Nullstill spill</button>
-        </header>
+            <div class="profile-preview">
+                <p>Ditt nivå: <span id="menu-level">1</span></p>
+                <p class="rank-title" id="menu-title">Nykomling</p>
+            </div>
+        </div>
 
-        <!-- Området hvor byen bygges -->
-        <section id="city-area" class="city-area">
-            <p id="empty-city-msg">Byen din er tom. Svar på spørsmål for å kjøpe ting!</p>
-            <!-- Her dukker hus og trær opp -->
-        </section>
-
-        <!-- Spill-området (Spørsmål) -->
-        <section class="quiz-area">
-            <h2 id="question-text">Laster spørsmål...</h2>
-            <p id="question-type" class="sub-text">Finn synonymet</p>
+        <!-- SPILL SKJERM (Skjult til spillet starter) -->
+        <div id="game-screen" style="display: none;">
             
-            <div id="options-container" class="options-grid">
-                <!-- Knappene genereres av JavaScript -->
-            </div>
+            <!-- Header med Level og XP -->
+            <header>
+                <div class="top-row">
+                    <button onclick="goToMenu()" class="small-btn">⬅ Meny</button>
+                    <span class="level-badge">Nivå <span id="current-level">1</span></span>
+                </div>
+                
+                <h3 id="rank-display">Nykomling</h3>
 
-            <p id="feedback-msg" class="feedback"></p>
-        </section>
+                <!-- Progress Bar -->
+                <div class="xp-container">
+                    <div class="xp-bar-bg">
+                        <div id="xp-fill" class="xp-bar-fill"></div>
+                    </div>
+                    <span id="xp-text" class="xp-text">0 / 100 XP</span>
+                </div>
+            </header>
 
-        <!-- Butikken -->
-        <section class="shop-area">
-            <h3>🛒 Butikken</h3>
-            <div class="shop-grid">
-                <button onclick="buyItem('🌷 Blomst', 50, '🌷')">Kjøp 🌷 (50 gull)</button>
-                <button onclick="buyItem('🌲 Tre', 100, '🌲')">Kjøp 🌲 (100 gull)</button>
-                <button onclick="buyItem('🏠 Hus', 250, '🏠')">Kjøp 🏠 (250 gull)</button>
-                <button onclick="buyItem('🏰 Slott', 1000, '🏰')">Kjøp 🏰 (1000 gull)</button>
-                <button onclick="buyItem('🐉 Drage', 5000, '🐉')">Kjøp 🐉 (5000 gull)</button>
-            </div>
-        </section>
+            <!-- Selve oppgaven -->
+            <section class="quiz-area">
+                <h2 id="question-text">Laster...</h2>
+                <p id="question-instruction" class="sub-text">Finn ordet som betyr det samme</p>
+                
+                <div id="options-container" class="options-grid">
+                    <!-- Knapper kommer her -->
+                </div>
+
+                <p id="feedback-msg" class="feedback"></p>
+            </section>
+        </div>
 
     </div>
 
