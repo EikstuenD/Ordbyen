@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ord-Byen: Synonym & Antonym Spill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <!-- Header med statistikk -->
+        <header>
+            <h1>🏰 Ord-Byen 🏰</h1>
+            <div class="stats-bar">
+                <span id="gold-display">💰 Gull: 0</span>
+                <span id="streak-display">🔥 Streak: 0</span>
+            </div>
+            <button onclick="resetGame()" class="reset-btn">Nullstill spill</button>
+        </header>
+
+        <!-- Området hvor byen bygges -->
+        <section id="city-area" class="city-area">
+            <p id="empty-city-msg">Byen din er tom. Svar på spørsmål for å kjøpe ting!</p>
+            <!-- Her dukker hus og trær opp -->
+        </section>
+
+        <!-- Spill-området (Spørsmål) -->
+        <section class="quiz-area">
+            <h2 id="question-text">Laster spørsmål...</h2>
+            <p id="question-type" class="sub-text">Finn synonymet</p>
+            
+            <div id="options-container" class="options-grid">
+                <!-- Knappene genereres av JavaScript -->
+            </div>
+
+            <p id="feedback-msg" class="feedback"></p>
+        </section>
+
+        <!-- Butikken -->
+        <section class="shop-area">
+            <h3>🛒 Butikken</h3>
+            <div class="shop-grid">
+                <button onclick="buyItem('🌷 Blomst', 50, '🌷')">Kjøp 🌷 (50 gull)</button>
+                <button onclick="buyItem('🌲 Tre', 100, '🌲')">Kjøp 🌲 (100 gull)</button>
+                <button onclick="buyItem('🏠 Hus', 250, '🏠')">Kjøp 🏠 (250 gull)</button>
+                <button onclick="buyItem('🏰 Slott', 1000, '🏰')">Kjøp 🏰 (1000 gull)</button>
+                <button onclick="buyItem('🐉 Drage', 5000, '🐉')">Kjøp 🐉 (5000 gull)</button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
