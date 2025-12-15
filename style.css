@@ -1,0 +1,141 @@
+/* Generelt oppsett */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e0f7fa; /* Lys blå bakgrunn */
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Header og Stats */
+header {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.stats-bar {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.reset-btn {
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* By-området (Belønning) */
+.city-area {
+    background-color: #c8e6c9; /* Gress-farge */
+    min-height: 150px;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 3px solid #81c784;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem; /* Størrelse på emojiene */
+    gap: 10px;
+}
+
+#empty-city-msg {
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Quiz Området */
+.quiz-area {
+    background-color: #fff3e0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h2 { margin: 0; font-size: 2rem; }
+.sub-text { margin-top: 5px; color: #666; font-style: italic; }
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.1s, background-color 0.2s;
+    background-color: #4fc3f7;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 0 #0288d1;
+}
+
+button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: #29b6f6;
+}
+
+/* Feedback (Riktig/Feil) */
+.feedback {
+    font-size: 1.2rem;
+    font-weight: bold;
+    height: 30px;
+    margin-top: 15px;
+}
+
+/* Butikken */
+.shop-area {
+    background-color: #f3e5f5;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.shop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.shop-grid button {
+    background-color: #ab47bc;
+    box-shadow: 0 4px 0 #7b1fa2;
+    font-size: 0.9rem;
+}
+
+/* Klasser for feedback i JS */
+.correct-answer { background-color: #66bb6a !important; box-shadow: 0 4px 0 #388e3c !important; }
+.wrong-answer { background-color: #ef5350 !important; box-shadow: 0 4px 0 #d32f2f !important; }
+
+/* Mobil-tilpasning */
+@media (max-width: 600px) {
+    .options-grid { grid-template-columns: 1fr; }
+}
